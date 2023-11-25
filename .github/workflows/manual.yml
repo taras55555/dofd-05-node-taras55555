@@ -1,7 +1,9 @@
-name: NodeJS with Webpack
+name: Task 2
 
 on:
   push:
+  pull_request:
+    types: [opened, synchronize]
   workflow_dispatch:
 
 jobs:
@@ -9,13 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-    - name: Installing Node.js & cloning the project
-      uses: actions/checkout@v4
-      with:
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: |
+          if [ "${{ github.event.action }}" ]; then
+            echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event. Event type is ${{ github.event.action }}."
+          else
+            echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+          fi
+        
+      - name: Installing Node.js & cloning the project
+        uses: actions/checkout@v4
+        with:
           node-version: 18
-          
-    - name: Downloading dependencies
-      run: npm ci
-    - name: Building project
-      run: npm run build --if-present
+        
+      - name: Downloading dependencies
+        run: npm ci
+      
+      - name: Building project
+        run: npm run build --if-present
