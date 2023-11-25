@@ -1,0 +1,21 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - name: Installing Node.js & cloning the project
+      uses: actions/checkout@v4
+      with:
+          node-version: 18
+          
+    - name: Downloading dependencies
+      run: npm ci
+    - name: Building project
+      run: npm run build --if-present
