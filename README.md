@@ -1,3 +1,6 @@
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=taras55555_dofd-05-node-taras55555)](https://sonarcloud.io/summary/new_code?id=taras55555_dofd-05-node-taras55555)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=taras55555_dofd-05-node-taras55555&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=taras55555_dofd-05-node-taras55555) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=taras55555_dofd-05-node-taras55555&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=taras55555_dofd-05-node-taras55555) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=taras55555_dofd-05-node-taras55555&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=taras55555_dofd-05-node-taras55555)
+
 # Description
 This project is the Node.js backend part of an educational  project. It provides connection to DB, implements CRUD operations and sends responses to requests. 
 ## Setup
